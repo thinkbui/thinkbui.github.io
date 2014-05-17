@@ -1,0 +1,30 @@
+body {
+	background-color:#3f0000;
+	color:#ffcc00;
+}
+
+a:link {
+	color:#ffffff;
+}
+
+a:visited {
+	color:#ffee66;
+}
+
+a:hover {
+	color:#eeeeee;
+}
+
+a:active {
+	color:#ffffff;
+}
+
+.reverse {
+	color:#3f0000;
+	background-color:#ffcc00;
+}
+
+#white {
+	background-color:#ffffff;
+	color:#3f0000;
+}
