@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="stylesheets/blog2.css">
+        <title>Ian's DBC SF Firecrackers Blog</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="http://thinkbui.github.io"><h1>Ian's DBC SF Firecrackers Blog</h1></a>
+        </header>
+        <div id="sidebar_left">
+            <nav id="left">
+                <ul>
+					<li><a href="week2_technical.html">W2 Tech Blog</a></li>
+                    <li><a href="my_wireframe.html">My Wireframe</a></li>
+                    <li><a href="wireframe_sites.html">Wireframe</a></li>
+                    <li><a href="week1_cultural_blog.html">W1 Cult Blog</a></li>
+                    <li><a href="week1_technical_blog.html">W1 Tech Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+        <main>
+			<h2>Week 2 Technical Blog</h2>
+
+			<p>When designing a webpage, it is best to keep mindful of the visible and invisible boundaries surrounding each element.  The three attributes that control these are margin, border, and padding.  These make up what's known as the "box model" with the actual content of the element.  The best way to visualize this is to think of framing a photograph and hanging it on the wall.  In this analogy, the frame itself would be the border, the insert would be the padding, and the space between other things hanging on the wall would be the margin.</p>
+			
+			<div class="image_container"><img class="image" src="http://www.w3schools.com/css/box-model.gif" /></div>
+			
+			<p>The picture on the left below has margin 7px, border 5px, and padding 10px thick.  The picture on the right has margin 15px, border 10px, and padding 2px thick.  The border styles are solid and dotted respectively.  Here you can see that the photo on the right has a thicker border that's closer to the picture to reflect the smaller padding and larger border sizes.  You can also see that the bottom border is slightly higher than that of the left picture.  This is caused by the higher margin moving the right picture slightly higher above the imaginary line that these two pictures sit upon (like a shelf).</p>
+
+			<div class="image_container"><img class="image" style="border-style:solid;border-width:5px;padding:10px;margin:7px;" src="images/Roses.jpg" /><img class="image" style="border-style:dotted;border-width:10px;padding:2px;margin:15px;" src="http://2.bp.blogspot.com/-8DcwfLyflcM/T_fomA4I9tI/AAAAAAAAA78/f6c-v2p5HSY/s320/ricki+mountain-framed+art-art+print+set-Black+and+white+cirlce+art+framed+set.jpg" /></div>
+			
+			<p>Both of these pictures below have margin 7px, border 5px, and padding 10px thick.  Here the borders are defined in the 4 sides each individually.  This may be useful if you wish to have a unique look to the page.  You can see that the bottom borders now line up as they have the same margins and therefore sit the same distance from the "shelf".</p>
+
+			<div class="image_container"><img class="image" style="border-left-style:dashed;border-right-style:outset;border-top-style:double;border-bottom-style:ridge;border-width:5px;padding:10px;margin:7px;" src="images/Roses.jpg" /><img class="image" style="border-left-style:inset;border-bottom-style:groove;border-right-style:solid;border-top-style:none;border-width:5px;padding:10px;margin:7px;" src="http://2.bp.blogspot.com/-8DcwfLyflcM/T_fomA4I9tI/AAAAAAAAA78/f6c-v2p5HSY/s320/ricki+mountain-framed+art-art+print+set-Black+and+white+cirlce+art+framed+set.jpg" /></div>
+        </main>
+        <div id="sidebar_right">
+            <nav id="right">
+                <ul>
+                    <li><a href="http://www.gmail.com">Gmail</a></li>
+                    <li><a href="http://www.facebook.com">Facebook</a></li>
+                    <li><a href="http://www.gopherpucklive.com/portal.php">Gopher Puck Live portal</a></li>
+                </ul>
+            </nav>
+            <footer>
+                <a href="http://thinkbui.github.io">Ian Bui 2014</a>
+            </footer>
+        </div>
+    </body>
+</html>
