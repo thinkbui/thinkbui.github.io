@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="stylesheets/blog2.css">
+        <title>Ian's DBC SF Firecrackers Blog</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="http://thinkbui.github.io"><h1>Ian's DBC SF Firecrackers Blog</h1></a>
+        </header>
+        <div id="sidebar_left">
+            <nav id="left">
+                <ul>
+                    <li><a href="week4_technical.html">W4 Tech Blog</a></li>
+                    <li><a href="week3_cultural.html">W3 Cultural Blog</a></li>
+                    <li><a href="week3_technical.html">W3 Tech Blog</a></li>
+                    <li><a href="week2_technical.html">W2 Tech Blog</a></li>
+                    <li><a href="my_wireframe.html">My Wireframe</a></li>
+                    <li><a href="wireframe_sites.html">Wireframe Analysis</a></li>
+                    <li><a href="week1_cultural_blog.html">W1 Cultural Blog</a></li>
+                    <li><a href="week1_technical_blog.html">W1 Tech Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+        <main>
+			<h2>Arrays vs Hashes</h2>
+
+            <p>One question that frequently arises among new programmers is what's the real difference between arrays and hashes.  Why are hashes used when their functionality could easily be mimicked using standard arrays?</p>
+			
+			<p>First of all, let's review what an array is.  When you declare an array, the application executing the code assigns a location in memory where that array begins.  Then the index of each element of that array serves as an offset (i.e. the first element has offset 0 since it is in the slot at the start of the array, then the second element has to go in the next slot in memory and has offset 1, the third element in the next with offset 2, and so on).</p>
+			
+			<p>So what's a hash?  From a code standpoint, it's a lot like a two arrays in parallel where one array has the payload data while the other has the lookup keys.  So if you want to store, say a value of 10 as a height of something, you could add (or modify) a pair where the key is "height" and the value is 10.  From this sense, you might say that it's like a pseudo object about halfway between an array and an object.</p>
+			
+			<div class="image_container"><img class="image" src="http://social.microsoft.com/Forums/getfile/454/" />
+			
+			<p>What isn't immediately obvious is why the extra structure is necessary.  Obviously arrays have their advantages, particularly if you know what payload data belongs where (ex. height is in index 0, width is in index 1, etc).  Therefore you save all that extra storage space that would be taken up by keys.  However this is only true in situations where the list of data is relatively consistent among instances of arrays.  Say you wanted to store the critical details of polygons and polyhedrons.  Most do have a meaningful height, but with varying numbers of sides and vertices.  It is conceivable that you could create a uniform layout of an array that would store all the relevant data for a finite number of these shapes, but the more you want to capture, the larger such a map of an array gets, so each instance of the data structure would contain numerous slots that store nothing but nil, making it less efficient storagewise.</p>
+			
+			<p>Speed is another factor to keep mindful of.  For very small payload data, arrays may be faster to lookup, but the longer an array gets, the longer it takes to check if it contains an element that, say, is equal to 10 or "height" and this grows linearly, which compounds the problem if lots of different arrays are used.  Hashes offer a solution that significantly reduces the growth of runtime with data table size.  It will take some time to explain what exactly this does behind the scenes, but it uses a hash function (hence the name) to segment the data into smaller sections or "buckets" of memory that make it easier to search through and perform other functions like add/delete dynamically.</p>
+			
+			<div class="image_container"><img class="image" src="http://en.wikipedia.org/wiki/Hash_table#mediaviewer/File:Hash_table_3_1_1_0_1_0_0_SP.svg" />
+			<div class="image_container"><img class="image" src="http://en.wikipedia.org/wiki/Hash_table#mediaviewer/File:Hash_table_5_0_1_1_1_1_0_LL.svg" />
+			
+			<p>Therefore storing data in arrays or hashes will depend on the application of those data structures.  If you need something small and simple, an array may be the way to go.  If you need something larger with a complex or dynamic library of information to store, hashes might be the best bet.</p>
+        </main>
+        <div id="sidebar_right">
+            <nav id="right">
+                <ul>
+                    <li><a href="http://social.msdn.microsoft.com/Forums/vstudio/en-US/a6b9a8d4-f414-4cd5-89f2-74c4907d656f/what-is-the-different-between-hash-table-and-array?forum=csharpgeneral">MS VS Forum</a></li>
+                    <li><a href="http://en.wikipedia.org/wiki/Hash_table">Wikipedia</a></li>
+                </ul>
+            </nav>
+            <footer>
+                <a href="http://thinkbui.github.io">Ian Bui 2014</a>
+            </footer>
+        </div>
+    </body>
+</html>
