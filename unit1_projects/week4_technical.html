@@ -39,8 +39,8 @@
 			
 			<p>Speed is another factor to keep mindful of.  For very small payload data, arrays may be faster to lookup, but the longer an array gets, the longer it takes to check if it contains an element that, say, is equal to 10 or "height" and this grows linearly, which compounds the problem if lots of different arrays are used.  Hashes offer a solution that significantly reduces the growth of runtime with data table size.  It will take some time to explain what exactly this does behind the scenes, but it uses a hash function (hence the name) to segment the data into smaller sections or "buckets" of memory that make it easier to search through and perform other functions like add/delete dynamically.</p>
 			
-			<div class="image_container"><img class="image" src="http://en.wikipedia.org/wiki/Hash_table#mediaviewer/File:Hash_table_3_1_1_0_1_0_0_SP.svg" />
-			<div class="image_container"><img class="image" src="http://en.wikipedia.org/wiki/Hash_table#mediaviewer/File:Hash_table_5_0_1_1_1_1_0_LL.svg" />
+			<div class="image_container"><img class="image" src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/315px-Hash_table_3_1_1_0_1_0_0_SP.svg.png" />
+			<div class="image_container"><img class="image" src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Hash_table_5_0_1_1_1_1_0_LL.svg/620px-Hash_table_5_0_1_1_1_1_0_LL.svg.png" />
 			
 			<p>Therefore storing data in arrays or hashes will depend on the application of those data structures.  If you need something small and simple, an array may be the way to go.  If you need something larger with a complex or dynamic library of information to store, hashes might be the best bet.</p>
         </main>
