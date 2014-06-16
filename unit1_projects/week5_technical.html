@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="stylesheets/blog2.css">
+        <title>Ian's DBC SF Firecrackers Blog</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="http://thinkbui.github.io"><h1>Ian's DBC SF Firecrackers Blog</h1></a>
+        </header>
+        <div id="sidebar_left">
+            <nav id="left">
+                <ul>
+                    <li><a href="week5_technical.html">W5 Tech Blog</a></li>
+                    <li><a href="week4_cultural.html">W4 Cultural Blog</a></li>
+                    <li><a href="week4_technical.html">W4 Tech Blog</a></li>
+                    <li><a href="week3_cultural.html">W3 Cultural Blog</a></li>
+                    <li><a href="week3_technical.html">W3 Tech Blog</a></li>
+                    <li><a href="week2_technical.html">W2 Tech Blog</a></li>
+                    <li><a href="my_wireframe.html">My Wireframe</a></li>
+                    <li><a href="wireframe_sites.html">Wireframe Analysis</a></li>
+                    <li><a href="week1_cultural_blog.html">W1 Cultural Blog</a></li>
+                    <li><a href="week1_technical_blog.html">W1 Tech Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+        <main>
+			<h2>Classes in Ruby</h2>
+
+            <p>Classes are abstractions in object-oriented programming languages like Ruby and used to create any construct that contains data and functions that serve a purpose as a single unit.  Some classes are built in, such as strings (raw text) and arrays (a primitive form of spreadsheet) that not only have the payload data itself, but have methods that perform functions like reversing the data or providing its length.  However there is only so much that can be done with them, so it is necessary to be able to create unique classes and languages like Ruby have the capabilities for that.</p>
+			
+			<p>Suppose you want to write a program that processes scores from the World Cup.  The most obvious class you would have to make is a game class so that you can create instances of it for each game that is played.  There's a lot of information that a program could capture, but for this example let's keep it simple.</p>
+			
+			<p>The first part that needs to be done is something that instantiates the class for each game.  Ruby calls it the initializer method.  Each game is a home team and a visiting team, so let's start with the basics:</p>
+			
+			<pre>
+			class Game
+				def initialize(home,away)
+					@home=home
+					@away=away
+					@home_score=[]
+					@away_score=[]
+				end
+			end
+			</pre>
+			
+			<p>Notice how there's variable with an '@' character in front of it.  These are instance variable that are kept with each instance of the class so that each instance can have it's own value for each of the variables.</p>
+			
+			<p>The next thing you may want to add is a method that adds a goal that is scored.  For instance:</p>
+			
+			<pre>
+				def goal(time,team,player)
+					if team==@home
+						@home_score.push([time,player])
+					else
+						@away_score.push([time,player])
+					end
+				end
+			</pre>
+			
+			<p>We also need methods that return the score and the outcome:</p>
+			
+			<pre>
+				def score(team)
+					if team==@home
+						return @home_score.length
+					else
+						return @away_score.length
+					end
+				end
+				
+				def winner()
+					if @home_score.length > @away_score.length
+						return @home
+					elsif @home_score.length < @away_score.length
+						return @away
+					else
+						return "tie"
+					end
+				end
+			</pre>
+			
+			<p>Putting all of this together with an object instance declaration we get:</p>
+
+			<pre>
+			class Game
+				def initialize(home,away)
+					@home=home
+					@away=away
+					@home_score=[]
+					@away_score=[]
+				end
+				
+				def goal(time,team,player)
+					if team==@home
+						@home_score.push([time,player])
+					else
+						@away_score.push([time,player])
+					end
+				end
+				
+				def score(team)
+					if team==@home
+						return @home_score.length
+					else
+						return @away_score.length
+					end
+				end
+				
+				def winner()
+					if @home_score.length > @away_score.length
+						return @home
+					elsif @home_score.length < @away_score.length
+						return @away
+					else
+						return "tie"
+					end
+				end
+			end
+			
+			game1 = Game.new("Brazil","Croatia")
+			game1.goal(11,"Croatia","Marcelo")
+			puts game1.score("Brazil") + "-" game1.score("Croatia")
+			game1.goal(29, "Brazil","Neymar")
+			puts game1.score("Brazil") + "-" game1.score("Croatia")
+			game1.goal(71, "Brazil","Neymar")
+			puts game1.score("Brazil") + "-" game1.score("Croatia")
+			game1.goal(91, "Brazil","Oscar")
+			puts game1.winner()
+			</pre>
+			
+			<p>The output of this code should be the following as the score gets printed after each goal:</p>
+			
+			<pre>
+			0-1
+			1-1
+			2-1
+			3-1
+			</pre>
+
+
+        </main>
+        <div id="sidebar_right">
+            <nav id="right">
+                <ul>
+                </ul>
+            </nav>
+            <footer>
+                <a href="http://thinkbui.github.io">Ian Bui 2014</a>
+            </footer>
+        </div>
+    </body>
+</html>
