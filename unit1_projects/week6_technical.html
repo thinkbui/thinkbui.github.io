@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="stylesheets/blog2.css">
+        <title>Ian's DBC SF Firecrackers Blog</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="http://thinkbui.github.io"><h1>Ian's DBC SF Firecrackers Blog</h1></a>
+        </header>
+        <div id="sidebar_left">
+            <nav id="left">
+                <ul>
+                    <li><a href="week6_technical.html">W6 Tech Blog</a></li>
+                    <li><a href="week5_cultural.html">W5 Cultural Blog</a></li>
+                    <li><a href="week5_technical.html">W5 Tech Blog</a></li>
+                    <li><a href="week4_cultural.html">W4 Cultural Blog</a></li>
+                    <li><a href="week4_technical.html">W4 Tech Blog</a></li>
+                    <li><a href="week3_cultural.html">W3 Cultural Blog</a></li>
+                    <li><a href="week3_technical.html">W3 Tech Blog</a></li>
+                    <li><a href="week2_technical.html">W2 Tech Blog</a></li>
+                    <li><a href="my_wireframe.html">My Wireframe</a></li>
+                    <li><a href="wireframe_sites.html">Wireframe Analysis</a></li>
+                    <li><a href="week1_cultural_blog.html">W1 Cultural Blog</a></li>
+                    <li><a href="week1_technical_blog.html">W1 Tech Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+        <main>
+			<h2>Ruby Class Methods</h2>
+
+            <p>We've learned a lot about instance methods in Ruby through creating objects from classes and the necessary methods to maintain those objects in the challenges so far in Unit 2.  However there's also class methods, methods that are maintained at the class level instead of with each instance, that could perform useful operations, so this gets away from the object-oriented mindset and move more towards functional programming.  Let's take a look at an example of a class with class methods:</p>
+			
+			<pre>
+				class Mathy_Formulae
+					def self.pythagorean(a,b)
+						Math.sqrt(a**2 + b**2)
+					end
+					
+					def Mathy_Formulae.quad_discriminant(a,b,c)
+						b**2 - (4 * a * c)
+					end
+					
+					def Mathy_Formulae.quad_formula(a,b,c)
+						d = Mathy_Formulae.quad_discriminant(a,b,c)
+						unless d>=0
+							raise ArgumentError "No real solutions found"
+						end
+						[(-b + Math.sqrt(d)) / (2 * a),(-b - Math.sqrt(d)) / (2 * a)]
+					end
+				end
+			</pre>
+			
+			<p>Notice how each method definition either has "self" or the class name "Mathy_Formulae" in front of the method name.  Either can be used.  If you follow the code, you can see that the methods can be called externally and return the result externally.  This is particularly useful for library classes and one such class, Math, is being used here for the square root method.</p>
+        </main>
+        <div id="sidebar_right">
+            <nav id="right">
+                <ul>
+                    <li><a href="http://www.railstips.org/blog/archives/2009/05/11/class-and-instance-methods-in-ruby/">RailsTips</a></li>
+                    <li><a href="http://www.rubyfleebie.com/understanding-class-methods-in-ruby/">Ruby Fleebie</a></li>
+                    <li><a href="http://mlomnicki.com/programming/ruby/2011/07/20/class-vs-instance-methods.html">Michal Lomnicki</a></li>
+                </ul>
+            </nav>
+            <footer>
+                <a href="http://thinkbui.github.io">Ian Bui 2014</a>
+            </footer>
+        </div>
+    </body>
+</html>
