@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="stylesheets/blog2.css">
+        <title>Ian's DBC SF Firecrackers Blog</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="http://thinkbui.github.io"><h1>Ian's DBC SF Firecrackers Blog</h1></a>
+        </header>
+        <div id="sidebar_left">
+            <nav id="left">
+                <ul>
+                    <li><a href="week7_technical.html">W7 Tech Blog</a></li>
+                    <li><a href="week6_cultural.html">W6 Cultural Blog</a></li>
+                    <li><a href="week6_technical.html">W6 Tech Blog</a></li>
+                    <li><a href="week5_cultural.html">W5 Cultural Blog</a></li>
+                    <li><a href="week5_technical.html">W5 Tech Blog</a></li>
+                    <li><a href="week4_cultural.html">W4 Cultural Blog</a></li>
+                    <li><a href="week4_technical.html">W4 Tech Blog</a></li>
+                    <li><a href="week3_cultural.html">W3 Cultural Blog</a></li>
+                    <li><a href="week3_technical.html">W3 Tech Blog</a></li>
+                    <li><a href="week2_technical.html">W2 Tech Blog</a></li>
+                    <li><a href="my_wireframe.html">My Wireframe</a></li>
+                    <li><a href="wireframe_sites.html">Wireframe Analysis</a></li>
+                    <li><a href="week1_cultural_blog.html">W1 Cultural Blog</a></li>
+                    <li><a href="week1_technical_blog.html">W1 Tech Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+        <main>
+			<h2>Running complex SQL queries in large DB's</h2>
+
+            <p>In my professional experience as a software quality assurance analyst, I've been in a lot of situations where complex queries had to be executed on SQL databases that had upwards of 3 million records on each table that only grew in size as a lot of the tables needing validation had one-to-many and many-to-many relationships.  As a result, a lot of the test scripts that I was writing would take upwards of 16 hours to execute on each of the data migration mappings that I was tasked to validate.  In the beginning, I would write and immediately run the tests, but as complexities grew, I found myself sitting at my desk for hours at a time completely idle waiting for my machine to finish executing the latest draft of the script before I could do anything else.</p>
+			
+			<p>Over time I managed to successfully lobby for a second workstation to split writing and basic executions from the larger complex query executions as well as execute most of the complex queries as I was leaving for the day so that the results would be ready the following morning.  Also key to work optimization was to shift a lot of the mindset away from complete validation to validation of boundary conditions for each field for daytime testing.</p>
+			
+			<p>One thing that I never leveraged was the ability for SQL to create temporary tables.  This was largely due to server space issues during part of this project, but since some queries I was running had to look up the same relationships between table records again and again and again, a lot of time could have been saved by creating the temp tables to prevent repeating lookups had the space been available.</p>
+			
+			<p>One of the key ways to optimize performance from a developer standpoint is to determine which queries will be executed frequently and design around minimizing performance expense of those queries.  This requires monitoring the frequnecy that the queries that are run so that adjustments could be made, particularly with upgrades and data migration, to re-optimize performance if common queries start to become expensive.</p>
+        </main>
+        <div id="sidebar_right">
+            <nav id="right">
+                <ul>
+                    <li><a href="http://www.foliotek.com/devblog/sql-server-database-optimization-a-beginners-guide/">Folioteck Development Blog</a></li>
+                </ul>
+            </nav>
+            <footer>
+                <a href="http://thinkbui.github.io">Ian Bui 2014</a>
+            </footer>
+        </div>
+    </body>
+</html>
