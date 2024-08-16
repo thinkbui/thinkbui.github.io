@@ -2,6 +2,11 @@ let sidebar_left_ul = document.querySelectorAll("#sidebar_left ul")[0];
 
 const sidebar_left_ul_contents = [
   {
+    "name": "YouTube Thumbnail Grabber",
+    "url": "youtube_thumbnail_grabber.html"
+  },
+  {},
+  {
     "name": "Old DBC Blog",
     "url": "index_dbc.html"
   }
@@ -16,7 +21,12 @@ let buildLeftListItemLink = function(name,url){
 
 let buildLeftListItem = function(name,url){
   let li = document.createElement("li");
-  li.appendChild(buildLeftListItemLink(name,url));
+  if(!!name && !!url){
+    li.appendChild(buildLeftListItemLink(name,url));
+  } else {
+    li.style = "list-style-type:none;"
+    li.innerHTML = "&nbsp;"
+  }
   return li;
 }
 
