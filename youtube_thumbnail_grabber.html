@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>Ian's Code Examples</title>
+    <style>
+    </style>
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+  </head>
+  <body>
+    <header>
+      <a href="http://thinkbui.github.io"><h1>Ian's Code Examples</h1></a>
+    </header>
+    <div id="sidebar_left">
+      <nav id="left">
+        <ul></ul>
+      </nav>
+    </div>
+    <main>
+      <h2>YouTube Thumbnail Grabber</h2>
+      <p>
+        This is a simple utility to view and download all the JPEG and WEBP thumbnails for a YouTube video.  As of August 2024, the web address structure of these images is fairly straight forward based upon the video's ID, but since it's tedious to manually typing in these addresses one-by-one, I build this simple utility to automatically load all the potential images at once.
+      </p>
+      <ul>
+        <li><a href="https://thinkbui.github.io/youtube-thumbnail-grabber/">Deployed App</a></li>
+        <li><a href="https://github.com/thinkbui/youtube-thumbnail-grabber">GitHub Repository</a></li>
+      </ul>
+      <p>
+        Although there are also animated thumbnails, they each have some kind of token or signature that appears to change over time as of August 2024.  Since they also seem to be provided to the front end individually and on an as-needed basis, there's no way for my utility to access them and therefore they are excluded from it.
+      </p>
+    </main>
+    <div id="sidebar_right">
+      <nav id="right">
+        <ul></ul>
+      </nav>
+      <footer>
+        <a href="http://thinkbui.github.io">Ian Bui 2024</a>
+      </footer>
+    </div>
+    <script src="./assets/js/sidebar_left.js"></script>
+    <script src="./assets/js/sidebar_right.js"></script>
+  </body>
+</html>
