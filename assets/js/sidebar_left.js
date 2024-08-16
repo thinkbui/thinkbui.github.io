@@ -1,4 +1,4 @@
-let sidebar_left_ul = document.querySelectorAll("#sidebar_left ul");
+let sidebar_left_ul = document.querySelectorAll("#sidebar_left ul")[0];
 
 const ul_contents = [
   {
@@ -7,7 +7,19 @@ const ul_contents = [
   }
 ]
 
+let buildListItemLink = function(name,url){
+  let a = document.createElement("a");
+  a.href = url;
+  a.innerHTML = name;
+  return a;
+}
+
+let buildListItem = function(name,url){
+  let li = document.createElement("li");
+  li.appendChild(buildListItemLink(name,url));
+  return li;
+}
+
 for(let i=0;i<ul_contents.length;i++){
-  console.log(ul_contents[i].name);
-  console.log(ul_contents[i].url);
+  sidebar_left_ul.appendChild(buildListItem(ul_contents[i].name,ul_contents[i].url));
 }
