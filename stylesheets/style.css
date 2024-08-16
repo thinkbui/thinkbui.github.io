@@ -1,3 +1,10 @@
+:root{
+    --maroon: #3F0000;
+    --maroon-light: #5F0000;
+    --maroon-dark: #2F0000;
+    --gold: #FFCC00;
+    --gold-light: #FFCC66;
+}
 body {
 	background-color:white;
 	color:black;
@@ -6,8 +13,8 @@ header{
     position:fixed;
 	top:0;
 	left:0;
-    background-color:#ffcc00;
-    color:#3f0000;
+    background-color:var(--gold);
+    color:var(--maroon);
     text-align:center;
     height:80px;
     width:100%;
@@ -16,24 +23,24 @@ header{
 }
 footer a, header a{
     text-decoration:none;
-    color:#3f0000;
+    color:var(--maroon);
 }
 footer a:hover, header a:hover{
-    color:#5f0000;
+    color:var(--maroon-light);
 }
 footer a:visited, header a:visited{
-    color:#2f0000;
+    color:var(--maroon-dark);
 }
 footer a:active, header a:active{
-    color:#3f0000;
+    color:var(--maroon);
 }
 #sidebar_left{
     position:fixed;
     top:80px;
 	left:0;
     width:150px;
-    background-color:#3f0000;
-    color:#ffcc00;
+    background-color:var(--maroon);
+    color:var(--gold);
 }
 main{
     top:80px;
@@ -46,26 +53,26 @@ main{
     top:80px;
     width:150px;
     right:0;
-    background-color:#3f0000;
-    color:#ffcc00;
+    background-color:var(--maroon);
+    color:var(--gold);
 }
 nav a{
     text-decoration:none;
-    color:#ffffff;
+    color:white;
 }
 nav a:hover{
     color:#eeeeee;
 }
 nav a:visited{
-    color:#ffee66;
+    color:var(--gold-light);
 }
 nav a:active{
-    color:#ffffff;
+    color:white;
 }
 footer{
     width:100%;
     float:left;
-    background-color:#ffcc00;
+    background-color:var(--gold);
     color:#3f0000;
     text-align:center;
     margin-top:10px;
