@@ -2,6 +2,10 @@ let sidebar_left_ul = document.querySelectorAll("#sidebar_left ul")[0];
 
 const sidebar_left_ul_contents = [
   {
+    "name": "e-Commerce Link Utils",
+    "url": "ecommerce_link_utils.html"
+  },
+  {
     "name": "JavaScript Injection Scraper",
     "url": "js_injection_scraper.html"
   },
