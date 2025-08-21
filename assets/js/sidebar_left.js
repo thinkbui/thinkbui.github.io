@@ -13,6 +13,10 @@ const sidebar_left_ul_contents = [
     "name": "YouTube Thumbnail Grabber",
     "url": "youtube_thumbnail_grabber.html"
   },
+  {
+    "name": "JavaScript Query Param Parser",
+    "url": "parse_url_params.html"
+  },
   {},
   {
     "name": "Old DBC Blog",
